@@ -14,12 +14,12 @@ export default defineConfigWithVueTs(
     files: ['**/*.{ts,mts,tsx,vue}'],
     languageOptions: {
       parser: vueParser,
+      ecmaVersion: 'latest',
+      sourceType: 'module',
       parserOptions: {
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-         'templateTokenizer': {
-             // template tokenizer for `<template lang="pug">`
-            'pug': 'vue-eslint-parser-template-tokenizer-pug',
+        templateTokenizer: {
+          // template tokenizer for `<template lang="pug">`
+          'pug': 'vue-eslint-parser-template-tokenizer-pug',
         }
       },
     },
