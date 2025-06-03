@@ -1,0 +1,285 @@
+{
+  // Place your eagle-web 工作區 snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+  // Placeholders with the same ids are connected.
+  // Example:
+  // "Print to console": {
+  //   "scope": "javascript,typescript",
+  //   "prefix": "log",
+  //   "body": [
+  //     "console.log('$1');",
+  //     "$2"
+  //   ],
+  //   "description": "Log output to console"
+  // }
+
+  "rwd": {
+		"prefix": "rwd",
+		"body": [
+      "@include rwd-pc-big {",
+			"  $1",
+			"}",
+			"@include rwd-pc {",
+			"  $2",
+			"}",
+      "@include rwd-mobile {",
+      "  $3",
+      "}",
+		],
+		"description": "RWD"
+	},
+  "component 元件動態注入": {
+    "prefix": "com",
+    "body": [
+      "const $2 = defineAsyncComponent(() => import('$1'));"
+    ]
+  },
+  "rwds": {
+    "prefix": "rwds",
+		"body": [
+	    ".pc-show {",
+      "  @include rwd-mobile {",
+      "    display: none;",
+      "  }",
+      "}",
+      ".mobile-show {",
+      "  @include rwd-pc {",
+      "    display: none;",
+      "  }",
+      "}",
+		],
+		"description": "RWD Show"
+  },
+  "dd": {
+    "prefix": "dd",
+    "body": [
+       "// eslint-disable-line"
+    ]
+  },
+  "ll": {
+    "prefix": "ll",
+    "body": [
+      "console.log($1);",
+    ]
+  },
+ 
+  "vue 檔模板": {
+    "prefix": "tt",
+    "body": [
+      "<script setup lang=\"ts\">",
+      "// $1 請填寫功能描述👈",
+      "</script>",
+      "",
+      "<template lang=\"pug\">",
+      ".$1",
+      "  p $1",
+      "</template>",
+      "",
+      "<style lang=\"scss\" scoped>",
+      "// 佈局 ----",
+      ".$1 {",
+      "  // TODO",
+      "}",
+      "",
+      "// 組件 ----",
+      "</style>",
+      ""
+    ]
+  },
+  "scss 檔模板": {
+    "prefix": "scss",
+    "body": [
+      "<style lang=\"scss\" scoped>",
+      "// 佈局 ----",
+      ".$1 {",
+      "  // TODO",
+      "}",
+      "",
+      "// 組件 ----",
+      "</style>",
+      ""
+    ]
+  },
+  "mark line": {
+    "prefix": "// -",
+    "body": [
+      "// $1-----------------------------------------------------------------------------------------------",
+    ]
+  },
+  "methods 分類": {
+		"prefix": "mClassify",
+		"body": [
+      "// -- 引入 --------------------------------------------------------------------------------------------",
+      "// -- 資料 --------------------------------------------------------------------------------------------",
+      "// type Props = {}",
+			"// const props = withDefaults(defineProps<Props>(),{});",
+			"// -- 接收事件 -----------------------------------------------------------------------------------------",
+			"// watch(()=>,()=>{},{deep: true, immediate: true})",
+			"// -- 流程 --------------------------------------------------------------------------------------------",
+			"// -- 函式 --------------------------------------------------------------------------------------------",
+      "// -- Api ---------------------------------------------------------------------------------------------",
+      "// -- 生命週期 -----------------------------------------------------------------------------------------",
+			"// onMounted(() => {});",
+      "// -- 發送事件 -----------------------------------------------------------------------------------------", 
+      "// type Emit = { 'on-change': [id: number, value: any] }",
+			"// const emit = defineEmits<Emit>();",
+			"// -- 對外暴露 ----------------------------------------------------------------------------------------",
+			"// defineExpose({ ... });",
+		]
+	},
+  "apibase": {
+    "prefix": "api",
+    "body": [
+      "/** 說明API */",
+      "const Api$1 = async () => {",
+      "  const { data, status } = await \\$api.$1();",
+      "  if (status.code === 0) {",
+      "    // TODO",
+      "    return true;",
+      "  }",
+      "  return false;",
+      "};",
+    ]
+  },
+  "api 資料型別": {
+    "prefix": "api-type",
+    "body": [
+      "// $1 -----------------------------------------------------------------------------------------------",
+      "/** $1 參數 */",
+      "type $2Params = {",
+      "",
+      "}",
+      "",
+      "/** $1 回傳 */",
+      "type $2Res = {",
+      "",  
+      "}",
+      "type $2Res = Omit<",
+      "  對象,",
+      "  | '排除節點1'",
+      "  | '排除節點2'",
+      ">",
+      ""
+    ]
+  },
+
+  "useAsnycData": {
+    "prefix": "useAsyncData",
+		"body": [
+			"useAsyncData('$1-init', async () => {",
+      "  $2",
+      "  await Promise.all([fn1(), fn2()]);",
+      "  return true;",
+      "});"
+		]
+  },
+  "debounce 基礎": {
+		"prefix": "debounce",
+		"body": [
+			"\\$lodash.debounce(() => {",
+			"  // ",
+			"}, 1000, { leading: true, trailing: false });"
+		]
+	},
+  "ts 單行關閉檢測": {
+    "prefix": "ts-ignore",
+    "body": [
+      "// @ts-ignore"
+    ]
+  },
+  "flow 流程基底": {
+    "prefix": "flow",
+    "body": [
+      "const $1Flow = () => {",
+      "  try {",
+      "    // if () {",
+      "    //   throw new Error('Error');",
+      "    // }",
+      "    // return true;",
+      "  } catch (error) {",
+      "    // console.error('error', error);",
+      "    // return false;",
+      "  } finally {",
+      "    // TODO",
+      "  }",
+      "};"
+    ]
+  },
+  "ElInput": {
+    "prefix": "input",
+    "body": [
+      "ElFormItem(:label=\"$$t('form.$1')\" prop=\"//TODO\")",
+      "  ElInput(",
+      "    :placeholder=\"$$t('ph.enter')\"",
+      "    maxlength=\"200\"",
+      "    @change=\"EmitChange\"",
+      "  )"
+    ]
+  },
+  "ElTextarea": {
+    "prefix": "memo",
+    "body": [
+      "ElFormItem(:label=\"$$t('label.memo')\")",
+      "  ElInput(",
+      "    :placeholder=\"$$t('ph.enter')\"",
+      "    type=\"textarea\"",
+      "    maxlength=\"2000\"",
+      "    :autosize=\"{minRows: 4, maxRows: 4 }\"",
+      "    @change=\"EmitChange\"",
+      "  )",
+    ]
+  },
+  "ElSelect": {
+    "prefix": "select",
+    "body": [
+      "ElFormItem(:label=\"$$t('form.$1')\" prop=\"//TODO\")",
+      "  ElSelect(",
+      "    :placeholder=\"$$t('ph.select')\"",
+      "    clearable",
+      "    @change=\"EmitChange\"",
+      "  )",
+      "    ElOption(",
+      "      v-for=\"item of [{value: 1, label: 'Demo'}]\"",
+      "      :key=\"item.value\"",
+      "      :label=\"item.label\"",
+      "      :value=\"item.value\"",
+      "    )",
+    ]
+  },
+  "ElDatePicker": {
+    "prefix": "datepicker",
+    "body": [
+      "ElFormItem(:label=\"$$t('form.$1')\" prop=\"//TODO\")",
+      "  ElDatePicker(",
+      "    type=\"date\"",
+      "    format=\"YYYY-MM-DD\"",
+      "    value-format=\"YYYY-MM-DD\"",
+      "    :placeholder=\"$$t('ph.select')\"",
+      "    style=\"width: 100%\"",
+      "    value-on-clear=\"\"",
+      "    :editable=\"false\"",
+      "    @change=\"EmitChange\"",
+      "  )",
+    ]
+  },
+  "ElRadio": {
+    "prefix": "radio",
+    "body": [
+      "ElFormItem(:label=\"$$t('form.$1')\")",
+      "  ElRadioGroup",
+      "    ElRadio(value=\"1\") {{ $$t('label.no') }}",
+      "    ElRadio(value=\"2\") {{ $$t('label.yes') }}",
+    ]
+  },
+  "ElCheckbox": {
+    "prefix": "checkbox",
+    "body": [
+      "ElFormItem(:label=\"$$t('form.$t')\")",
+      "  ElCheckboxGroup(v-model=\"params.roleTypeList\")",
+      "    ElCheckbox(v-for=\" roleItem of roleTypeList\" :key=\"roleItem.value\" :label=\"roleItem.label\" :value=\"roleItem.value\")",
+    ]
+  },
+}
