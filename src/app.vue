@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-const aa =ref('123');
+const count =ref('123');
 
 </script>
 
@@ -8,18 +8,25 @@ const aa =ref('123');
   header
     BbCc
     div(class="wrapper")
-      HelloWorld(msg="aaaa!")
-      button(@click="aa++") Add
-      p {{aa}}
-      nav
-        RouterLink(to="/home") Home
-        RouterLink(to="/about") About
+      button(@click="count++") Add
+      p {{count}}
+      nav.row
+        RouterLink(to="/home")
+          button Home
+        RouterLink(to="/about")
+          button About
+        RouterLink(to="/user")
+          button User
+        RouterLink(to="/user/123")
+          button UserId
 
   RouterView(v-slot="{ Component }")
     Transition(name="layout" mode="out-in")
       component(:is="Component")
 </template>
 
-<style scoped>
-
+<style scoped lang="scss">
+.row {
+  @include row(10px);
+}
 </style>

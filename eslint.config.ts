@@ -45,6 +45,7 @@ export default defineConfigWithVueTs(
       curly: 'off', // 可用 return 簡寫
       'vue/no-mutating-props': 'off', // change props
       'vue/multi-word-component-names': 'off', // 多單字的名字
+       '@typescript-eslint/ban-ts-comment': 'off'
     }
   }
 );
