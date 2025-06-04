@@ -14,10 +14,12 @@ const aa =ref('123');
       button(@click="aa++") Add
       p {{aa}}
       nav
-        RouterLink(to="/") Home
+        RouterLink(to="/home") Home
         RouterLink(to="/about") About
 
-  RouterView
+  RouterView(v-slot="{ Component }")
+    Transition(name="layout" mode="out-in")
+      component(:is="Component")
 </template>
 
 <style scoped>
