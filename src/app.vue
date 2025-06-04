@@ -6,8 +6,6 @@ const aa =ref('123');
 
 <template lang="pug">
   header
-    //- img(alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125")
-
     BbCc
     div(class="wrapper")
       HelloWorld(msg="aaaa!")
