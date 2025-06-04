@@ -10,7 +10,7 @@
 <style lang="scss" scoped>
 // 佈局 ----
 .BbCc {
-  background-color: red;
+  background-color: $primary;
 }
 
 // 組件 ----

@@ -5,6 +5,7 @@
 <template lang="pug">
 .PageUser
   p PageUser
+  p(v-for="i of 100" :key="i") {{i}}
 </template>
 
 <style lang="scss" scoped>

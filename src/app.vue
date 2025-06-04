@@ -1,28 +1,14 @@
 <script setup lang="ts">
+import Layout from './layout.vue';
 
-const count =ref('123');
 
 </script>
 
 <template lang="pug">
-  header
-    BbCc
-    div(class="wrapper")
-      button(@click="count++") Add
-      p {{count}}
-      nav.row
-        RouterLink(to="/home")
-          button Home
-        RouterLink(to="/about")
-          button About
-        RouterLink(to="/user")
-          button User
-        RouterLink(to="/user/123")
-          button UserId
-
-  RouterView(v-slot="{ Component }")
-    Transition(name="layout" mode="out-in")
-      component(:is="Component")
+  Layout
+    RouterView(v-slot="{ Component }")
+      Transition(name="layout" mode="out-in")
+        component(:is="Component")
 </template>
 
 <style scoped lang="scss">
