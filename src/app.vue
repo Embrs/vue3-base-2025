@@ -11,8 +11,6 @@ import Layout from './layout.vue';
         component(:is="Component")
 </template>
 
-<style scoped lang="scss">
-.row {
-  @include row(10px);
-}
+<style lang="scss">
+// TODO
 </style>
